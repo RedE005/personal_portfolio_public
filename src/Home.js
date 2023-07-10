@@ -24,7 +24,7 @@ function Home() {
           <span className="text-span-22">Spring Boot</span> for enterprise-level
           wizardry, <span className="text-span-22">.NET Framework</span> for
           scalable wonders,
-          <span className="text-span-22">Angular</span> for slick frontend
+           <span className="text-span-22"> Angular</span> for slick frontend
           maneuvers, <span className="text-span-22">NoSQL</span> guru with{" "}
           <span className="text-span-22">MongoDB</span>, and diving into the
           exciting realm of <span className="text-span-22">Machine Learning</span>{" "}
