@@ -94,7 +94,7 @@ function Contact() {
                 <li>
                   Feel free to drop me an email at{" "}
                   <u>shivaramreddybethi@gmail.com</u>. I'm always excited to
-                  connect and discuss new opportunities!"
+                  connect and discuss new opportunities!
                 </li>
               </ul>
             </h5>
