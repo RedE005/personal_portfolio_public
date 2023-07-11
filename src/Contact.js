@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import emailjs from "emailjs-com";
-import emailJsCredentials from "./emailJsKey.js"
 
 function Contact() {
   const [email, setEmail] = useState();
   const [name, setName] = useState();
   const [phone, setPhone] = useState();
   const [userquery, setUserquery] = useState();
-  const userId = emailJsCredentials.userId;
-  const templateId = emailJsCredentials.templateId;
-  const serviceId = emailJsCredentials.serviceId;
+  const userId = process.env.REACT_APP_API_KEY;
+  const templateId = process.env.REACT_APP_TEMPLATE_KEY;
+  const serviceId = process.env.REACT_APP_SERVICE_ID;
 
   function handleSubmit(e) {
     e.preventDefault();
