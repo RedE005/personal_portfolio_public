@@ -11,6 +11,7 @@ function App() {
   const [isWorkExClicked, setWorkExClicked] = useState(false);
   const [isContactClicked, setContactClicked] = useState(false);
   const [isResumeClicked, setResumeClicked] = useState(false);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const home = ReactDOM.createRoot(document.getElementById("content"));
 
@@ -111,7 +112,7 @@ function App() {
     if (isWorkExClicked) {
       setWorkExClicked(!isWorkExClicked);
     }
-    const url = "https://drive.google.com/file/d/1MdDkngINq9jeK-_1uDMDKyOkT3xx23Ri/view?usp=sharing";
+    const url = "https://drive.google.com/file/d/1nE-rxoDcmafd1_5iLr4uPfBKwFg9Bjuq/view?usp=sharing";
     window.open(url, "_blank");
   }
 

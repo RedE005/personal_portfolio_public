@@ -93,7 +93,7 @@ function Education() {
               >
                 <h5>Jawaharlal Nehru Technological University, India</h5>
               </a>
-              <h5><span className="text-span-23">GPA</span>: 3.8/4.0</h5>
+              <h5><span className="text-span-23">GPA</span>: 3.9/4.0</h5>
               <h6 className="margin-bottom-24px">
               <span className="text-span-22">2016 - 2020</span>
                 <br />

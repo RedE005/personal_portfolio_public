@@ -15,45 +15,38 @@ function Contact() {
   function handleSubmit(e) {
     e.preventDefault();
     if (emailValidation()) {
-      emailjs
-        .sendForm(
-          serviceId,
-          templateId,
-          e.target,
-          userId
-        )
-        .then(
-          (result) => {
-            toast.success(
-              "Thanks! Your query is submitted, I will get back to you shortly.",
-              {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-              }
-            );
-          },
-          (errors) => {
-            toast.error(
-              "Oops! Form submission failed. Please try again later. ",
-              {
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "colored",
-              }
-            );
-          }
-        );
+      emailjs.sendForm(serviceId, templateId, e.target, userId).then(
+        (result) => {
+          toast.success(
+            "Thanks! Your query is submitted, I will get back to you shortly.",
+            {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            }
+          );
+        },
+        (errors) => {
+          toast.error(
+            "Oops! Form submission failed. Please try again later. ",
+            {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+            }
+          );
+        }
+      );
       //alert("Your query is submitted!");
       setEmail("");
       setName("");
@@ -92,8 +85,13 @@ function Contact() {
               <ul>
                 <li>
                   Feel free to drop me an email at{" "}
-                  <u>shivaramreddybethi@gmail.com</u>. I'm always excited to
-                  connect and discuss new opportunities!
+                  <span className="hide-mobile-text-span-20-email">
+                    shivaramreddybethi@gmail.com
+                  </span>
+                  <span className="show-mobile-text-span-20-email">
+                    shivaramreddybethi @gmail.com
+                  </span>
+                  . I'm always excited to connect and discuss new opportunities!
                 </li>
               </ul>
             </h5>

@@ -23,10 +23,10 @@ function Work() {
             <div className="hero-split">
               <h1 className="heading-40"><span className="text-span-21">Software Engineer II</span></h1>
               <div>
-                <strong><span className="text-span-22">March'23 - Present</span></strong>
+                <strong><span className="text-span-22">Mar'23 - Aug'23</span></strong>
               </div>
               <p className="margin-bottom-24px">
-                Working in Strategic Portfolio Management Engineering team,
+                Worked in Strategic Portfolio Management Engineering team,
                 which enables you to make the right decisions and leverage
                 digital transformation. Plan, deliver, and track value across
                 different methodologies in IT Business Management. Developed a
@@ -40,7 +40,6 @@ function Work() {
         </div>
       </section>
       <section
-        data-w-id="bd5ed600-3596-cab5-ddac-87a662eed0c1"
         className="hero-heading-right"
       >
         <div className="container-10">
@@ -56,11 +55,9 @@ function Work() {
               />
             </div>
             <div className="hero-split">
-              <ul>
-                <li>
-                  <h1 className="heading-41"><span className="text-span-21">Software Engineer I</span></h1>
+                  <h1 className="heading-40"><span className="text-span-21">Software Engineer I</span></h1>
                   <div>
-                    <strong><span className="text-span-22">Oct'20 - Mar'23</span></strong>
+                    <strong><span className="text-span-22">Oct'20 - Feb'23</span></strong>
                   </div>
                   <p className="margin-bottom-24px">
                     Worked in core development of ATM software product (Activate
@@ -72,8 +69,6 @@ function Work() {
                     flow.
                     <br />
                   </p>
-                </li>
-                <li>
                   <h1 className="heading-41"><span className="text-span-21">Software Engineer Intern</span></h1>
                   <div>
                     <strong><span className="text-span-22">Jan'20 - Oct'20</span></strong>
@@ -86,8 +81,6 @@ function Work() {
                     Robot Framework, Selenium Library and AutoIT tool.
                     <br />
                   </p>
-                </li>
-              </ul>
             </div>
           </div>
         </div>

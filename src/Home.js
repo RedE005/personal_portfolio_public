@@ -3,7 +3,6 @@ function Home() {
   return (
     <div className="container-9 w-container">
       <section
-        data-w-id="48c73353-46c9-f2f9-cbca-918a5f64ec08"
         className="hero-heading-right"
       >
         <h3 className="heading-jumbo">

@@ -3266,11 +3266,11 @@ figcaption {
   background-color: #fffeff;
   border-bottom: 1px solid #e4ebf3;
   border-radius: 15px;
-  padding: 40px 30px;
+  padding: 5% 10% 5% 0%;
   position: relative;
   box-shadow: 0 3px 10px rgba(0, 0, 0, .2);
   width: 70%;
-  margin: 10px 20px;;
+  margin: 10px 20px;
 }
 
 .container-10 {
@@ -3338,6 +3338,29 @@ figcaption {
   background-color: #e1e7ff;
 }
 
+.text-span-20-email {
+  background-color: #e1e7ff;
+  overflow-wrap: break-word;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .show-mobile-text-span-20-email {
+    background-color: #e1e7ff;
+  }
+  .hide-mobile-text-span-20-email {
+    display: none;
+  }
+}
+
+@media only screen and (min-device-width: 481px) {
+  .show-mobile-text-span-20-email {
+    display: none;
+  }
+  .hide-mobile-text-span-20-email {
+    background-color: #e1e7ff;
+  }
+}
+
 .text-span-21 {
   color: #0055a2;
   font-weight: 700;
@@ -3377,7 +3400,7 @@ figcaption {
   color: white;
   cursor: pointer;
   padding: 1px;
-  width: 15%;
+  width: 12em;
   border: none;
   text-align: left;
   outline: none;
@@ -3479,5 +3502,3 @@ button[type="submit"]:hover {
   padding: 0; /* Remove padding */
   margin: 0; /* Remove margins */
 }
-
-
