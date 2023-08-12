@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import Home from "./Home.js";
 import Work from "./Work.js";
@@ -11,12 +11,27 @@ function App() {
   const [isWorkExClicked, setWorkExClicked] = useState(false);
   const [isContactClicked, setContactClicked] = useState(false);
   const [isResumeClicked, setResumeClicked] = useState(false);
-  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobileDropDownSelected, setMobileDropDownSelected] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setMobileDropDownSelected(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
 
   const home = ReactDOM.createRoot(document.getElementById("content"));
 
   function handleNameClick(e) {
     e.preventDefault();
+    setMobileDropDownSelected(false);
 
     if (isWorkExClicked) {
       setWorkExClicked(!isWorkExClicked);
@@ -40,7 +55,7 @@ function App() {
   function handleWorkExClick(e) {
     e.preventDefault();
     setWorkExClicked(true);
-
+    setMobileDropDownSelected(false);
     if (isResumeClicked) {
       setResumeClicked(!isResumeClicked);
     }
@@ -60,6 +75,7 @@ function App() {
   function handleEducationClick(e) {
     e.preventDefault();
     setEducationClicked(true);
+    setMobileDropDownSelected(false);
 
     if (isResumeClicked) {
       setResumeClicked(!isResumeClicked);
@@ -81,6 +97,7 @@ function App() {
   function handleContactClick(e) {
     e.preventDefault();
     setContactClicked(true);
+    setMobileDropDownSelected(false);
 
     if (isResumeClicked) {
       setResumeClicked(!isResumeClicked);
@@ -102,6 +119,7 @@ function App() {
   function handleResumeClick(e) {
     e.preventDefault();
     setResumeClicked(true);
+    setMobileDropDownSelected(false);
 
     if (isContactClicked) {
       setContactClicked(!isContactClicked);
@@ -112,63 +130,143 @@ function App() {
     if (isWorkExClicked) {
       setWorkExClicked(!isWorkExClicked);
     }
-    const url = "https://drive.google.com/file/d/1nE-rxoDcmafd1_5iLr4uPfBKwFg9Bjuq/view?usp=sharing";
+    const url =
+      "https://drive.google.com/file/d/1nE-rxoDcmafd1_5iLr4uPfBKwFg9Bjuq/view?usp=sharing";
     window.open(url, "_blank");
   }
 
   return (
-    <div
-      data-collapse="medium"
-      data-animation="default"
-      data-duration="400"
-      data-easing="ease"
-      data-easing2="ease"
-      role="banner"
-      className="navigation w-nav"
-    >
-      <div className="navigation-items">
-        <a href=""
-          onClick={handleNameClick}
-          aria-current="page"
-          className="w-nav-brand w--current"
+    <div>
+      <div className="wideScreenView">
+        <div
+          data-collapse="medium"
+          data-animation="default"
+          data-duration="400"
+          data-easing="ease"
+          data-easing2="ease"
+          role="banner"
+          className="navigation w-nav"
         >
-          <strong>SHIVA RAM REDDY BETHI</strong>
-        </a>
-        <div>
-          <nav role="navigation" className="navigation-items w-nav-menu">
-            <a href=""
-              onClick={handleWorkExClick}
-              className={`navigation-item w-nav-link ${
-                isWorkExClicked ? "w--current" : " "
-              }`}
+          <div className="navigation-items">
+            <a
+              href=""
+              onClick={handleNameClick}
+              aria-current="page"
+              className="w-nav-brand w--current"
             >
-              Work Experience
+              <strong>SHIVA RAM REDDY BETHI</strong>
             </a>
-            <a href=""
-              onClick={handleEducationClick}
-              className={`navigation-item w-nav-link ${
-                isEducationClicked ? "w--current" : " "
-              }`}
+            <div>
+              <nav role="navigation" className="navigation-items w-nav-menu">
+                <a
+                  href=""
+                  onClick={handleWorkExClick}
+                  className={`navigation-item w-nav-link ${
+                    isWorkExClicked ? "w--current" : " "
+                  }`}
+                >
+                  Work Experience
+                </a>
+                <a
+                  href=""
+                  onClick={handleEducationClick}
+                  className={`navigation-item w-nav-link ${
+                    isEducationClicked ? "w--current" : " "
+                  }`}
+                >
+                  Qualifications
+                </a>
+                <a
+                  href=""
+                  onClick={handleContactClick}
+                  className={`navigation-item w-nav-link ${
+                    isContactClicked ? "w--current" : " "
+                  }`}
+                >
+                  Contact
+                </a>
+                <a
+                  href=""
+                  onClick={handleResumeClick}
+                  className={`navigation-item w-nav-link ${
+                    isResumeClicked ? "w--current" : " "
+                  }`}
+                >
+                  RESUME
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mobileScreenView">
+        <div
+          data-collapse="medium"
+          data-animation="default"
+          data-duration="400"
+          data-easing="ease"
+          data-easing2="ease"
+          role="banner"
+          className="navigation w-nav"
+        >
+          <div className="menu-container" ref={dropdownRef}>
+            <div className="menu-icon" onClick={()=>{setMobileDropDownSelected(!isMobileDropDownSelected)}}>
+              <div className="menu-line"></div>
+              <div className="menu-line"></div>
+              <div className="menu-line"></div>
+            </div>
+            <div className={`dropdown-content ${isMobileDropDownSelected ? 'open-dropdown' : ''}`}>
+              <a
+                href=""
+                onClick={handleWorkExClick}
+                className={`navigation-item w-nav-link ${
+                  isWorkExClicked ? "w--current" : " "
+                }`}
+              >
+                Work Experience
+              </a>
+              <a
+                href=""
+                onClick={handleEducationClick}
+                className={`navigation-item w-nav-link ${
+                  isEducationClicked ? "w--current" : " "
+                }`}
+              >
+                Qualifications
+              </a>
+              <a
+                href=""
+                onClick={handleContactClick}
+                className={`navigation-item w-nav-link ${
+                  isContactClicked ? "w--current" : " "
+                }`}
+              >
+                Contact
+              </a>
+              <a
+                href=""
+                onClick={handleResumeClick}
+                className={`navigation-item w-nav-link ${
+                  isResumeClicked ? "w--current" : " "
+                }`}
+              >
+                RESUME
+              </a>
+            </div>
+          </div>
+
+          <div className="navigation-items">
+            <a
+              href=""
+              onClick={handleNameClick}
+              aria-current="page"
+              className="w-nav-brand w--current"
             >
-              Qualifications
+              <strong style={{ fontSize: "18px" }}>
+                SHIVA RAM REDDY BETHI
+              </strong>
             </a>
-            <a href=""
-              onClick={handleContactClick}
-              className={`navigation-item w-nav-link ${
-                isContactClicked ? "w--current" : " "
-              }`}
-            >
-              Contact
-            </a>
-            <a href=""
-              onClick={handleResumeClick}
-              className={`navigation-item w-nav-link ${
-                isResumeClicked ? "w--current" : " "
-              }`}
-            >
-              RESUME
-            </a>
-          </nav>
+          </div>
         </div>
       </div>
     </div>
