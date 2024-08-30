@@ -7,7 +7,7 @@ function Home() {
       >
         <h3 className="heading-jumbo">
           Hello, I'm Shiva, a{" "}
-          <span className="text-span-20"> Software Engineer</span>
+          <span className="text-span-20"> Software Engineer</span>.
         </h3>
 
         <div className="name-text">
@@ -23,10 +23,11 @@ function Home() {
           <span className="text-span-22">Spring Boot</span> for enterprise-level
           wizardry, <span className="text-span-22">.NET Framework</span> for
           scalable wonders,
-           <span className="text-span-22"> Angular</span> for slick frontend
+          <span className="text-span-22"> Angular</span> for slick frontend
           maneuvers, <span className="text-span-22">NoSQL</span> guru with{" "}
           <span className="text-span-22">MongoDB</span>, and diving into the
           exciting realm of <span className="text-span-22">Machine Learning</span>{" "}
+          and <span className="text-span-22">Artificial Intelligence </span>
           for mind-blowing insights user-centric experiences that drive{" "}
           measurable outcomes.
         </div>
@@ -38,9 +39,10 @@ function Home() {
               {" "}
               Software Engineering @ San Jose State University{" "}
             </span>{" "}
-            and looking for job/internship opportunities.
+            and looking for work/collaboration opportunities.
             <br />
-            Previously at <span className="text-span-24">
+            Previously at <span className="text-span-24"> AWS, </span>
+            <span className="text-span-24">
               {" "}
               ServiceNow{" "}
             </span> and <span className="text-span-24"> NCR Corporation</span>.
