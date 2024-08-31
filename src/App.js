@@ -131,7 +131,7 @@ function App() {
       setWorkExClicked(!isWorkExClicked);
     }
     const url =
-      "https://drive.google.com/file/d/10jxdSqi7cXh6DZgY8Jv6enkSST0G89Wf/view?usp=sharing";
+      "https://drive.google.com/file/d/1Hn76XjzNeqFaRH2vpB8Ni0MGEeD8vBXB/view?usp=sharing";
     window.open(url, "_blank");
   }
 
